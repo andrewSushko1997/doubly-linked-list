@@ -17,7 +17,6 @@ describe('LinkedList', () => {
             const list = new LinkedList();
 
             list.append(data);
-
             expect(list._tail).to.be.an.instanceof(Node)
             expect(list._head).to.be.an.instanceof(Node)
         });
@@ -61,10 +60,12 @@ describe('LinkedList', () => {
             list.append(1);
             list.append(123);
             list.append(444);
+            list.append(423);
 
             expect(list.at(0)).to.equal(1);
             expect(list.at(1)).to.equal(123);
             expect(list.at(2)).to.equal(444);
+            expect(list.at(3)).to.equal(423);
 
         });
     });
@@ -78,7 +79,6 @@ describe('LinkedList', () => {
             list.append(47);
 
             list.insertAt(position, data);
-
             expect(list.at(position)).to.equal(data);
         });
     });
