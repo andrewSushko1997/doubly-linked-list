@@ -115,19 +115,20 @@ class LinkedList {
     }
 
     reverse() {
-    	var currentNode = this._head;
-    	var saveNode = null;
-    	var saveTail = this._tail;
     	var count = 0;
 
-    	this._tail = this._head;
-    	this._head = saveTail;
-
+    	var currentNode = this._head;
     	while(count < this.length) {
-    		saveNode = currentNode.next;
+    		var saveNode = currentNode.next;
     		currentNode.next = currentNode.prev;
     		currentNode.prev = saveNode;
+    		currentNode = saveNode;
+    		count++;
     	}
+    	var saveTail = this._tail;
+    	this._tail = this._head;
+    	this._head = saveTail;
+    	return this;
     }
 
     indexOf(data) {
