@@ -80,7 +80,7 @@ class LinkedList {
 			this._tail = node;
 		}
   	this.length++;
-
+	return this;
     }
 
     isEmpty() {
@@ -91,6 +91,7 @@ class LinkedList {
     	this._head.data = null;
     	this._tail.data = null;
     	this.length = 0;
+	return this;
     }
 
     deleteAt(index) {
@@ -112,6 +113,7 @@ class LinkedList {
     		this._head = currentNode.next;
     	}
     	this.length--;
+	return this;
     }
 
     reverse() {
