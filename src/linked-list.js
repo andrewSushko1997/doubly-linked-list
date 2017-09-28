@@ -19,7 +19,7 @@ class LinkedList {
     	}
     	this.length++;
 
-    	return node;
+    	return this;
 
     }
 
